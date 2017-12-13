@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+
+		<style>
+			p {
+				color: white;
+			}
+
+			#bodystyle {
+
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0
+				margin: 0;
+				padding: 0;
+			}
+
+			#div_main {
+
+				width: 100%;
+				height: 100%;
+				min-width: 960px;
+				min-height: 490px;
+
+				margin-bottom: 50px;
+
+				position: relative;
+			}
+
+			#div_bottom {
+
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 910px 0 0 0;
+				padding: 0;
+				min-height: 490px;
+				min-width: 960px;
+			}
+
+			div#top_navigationbar {
+				width: 100%;
+				height: 50px;
+				margin: 0;
+			}
+			span#top_navigationbar--span {
+				width: 100%;
+				height: 100%;
+			}
+			div.top_navigationbar--div {
+				position: relative;
+				float: right;
+				width: 50px;
+				height: 50px;
+				margin: 0;
+			}
+			div.top_navigationbar--div_img {
+				position: relative;
+				float: right;
+				width: 40px;
+				height: 50px;
+				margin: 0;
+			}
+			.top_navigationbar--div_item {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 40px;
+				margin: 0;
+				color: #737373; 
+				font-size: 13px;"
+			}
+			.top_navigationbar--div_item--img_menu {
+				position: absolute;
+				top: 50%;
+				left: 40%;
+				transform: translate(-50%, -50%);
+				width: 20px;
+				height: 20px;
+				margin: 0;
+			}
+			.top_navigationbar--div_item--img_menu--ul {
+				text-align: left;
+				margin: 0;
+				padding: 28px;
+			}
+			.top_navigationbar--div_item--img_menu--li_item {
+				width: 86px;
+				height: 98px;
+				float: left;
+			}
+			.top_navigationbar--div_item--img_menu--li_item--span_img {
+				display: block;
+				width: 86px;
+				height: 78px;
+				margin: 0;
+				text-align: center;
+				position: relative;
+			}
+			.top_navigationbar--div_item--img_menu--li_item--span_p {
+				display: block;
+				width: 86px;
+				height: 20px;
+				margin: 0;
+				text-align: center;
+			}
+			.top_navigationbar--div_item--img_menu--li_item--img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 64px;
+				height: 64px;
+				margin: auto;
+			}
+			.top_navigationbar--div_item--img_menu--li_item--p {
+				color: black;
+				margin: auto;
+			}
+			.top_navigationbar--div_item--img_noti {
+				position: absolute;
+				top: 50%;
+				left: 30%;
+				transform: translate(-50%, -50%);
+				width: 20px;
+				height: 20px;
+				margin: 0;
+				border-radius: 50%;
+				background-color: #737373;
+			}
+			#top_navigationbar--div_user_circle {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background-color: purple;
+			}
+			.top_navigationbar--div_item--img_user {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				margin: 0px;
+			}
+			
+			
+			div#main_contents {
+				width: 100%;
+				margin: 0px;
+			}
+			span#main_contents--span {
+				width: 100%;
+				height: 100%;
+			}
+			div.main_contents--span--div {
+				margin-top: 30px;
+			}
+			div#main_contents--span--div_logo {
+				width: 290px;
+				height: 100px;
+				margin-top: 140px;
+			}
+			div#main_contents--span--div_search {
+				width: 486px;
+				height: 40px;
+				margin: 0px;
+				background-color: white;
+			    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+			}
+			div#main_contents--span--div_search--div_input {
+				float: left;
+				width: 390px; 
+				height: 40px; 
+				margin-right: 0px;
+			}
+			input#main_contents--span--div_search--div_input--input {
+				width: 363px;
+				height: 34px;
+				border: none; 
+				padding: 6px 9px 0px 16px;
+				font-size: small; 
+				outline: none;        
+			}
+			div#main_contents--span--div_search--div_searchbutton {
+				float: left;
+				width: 96px;
+				height: 40px;
+				margin: 0px;
+			}
+			.main_contents--span--div_search--div_searchbutton--img {
+				float: right;
+				width: 20px;
+				height: 20px;
+				margin: 10px;
+			}
+			div#main_contents--span--div_button {
+				width: 350px;
+				height: 100px;
+				margin-top: 30px;
+			}
+			.main_contents--span--div_button--button {
+				height: 36px;
+				background-color: #f4f4f4;
+				border: none;
+				margin: 2px;
+				padding: 0px 16px 0px 16px;
+			    font-family: arial,sans-serif;
+			    font-size: 13px;
+			    font-weight: bold;      
+			    outline: none;
+			}
+			
+			
+			div#bottom_navigationbar {
+				width: 100%;
+				height: 43px;
+				min-width: 960px;
+				background-color: #f4f4f4;
+
+				position: absolute;
+				bottom: 0;
+			}
+			div.bottom_navigationbar--div {
+				height: 43px;
+			}
+			div#bottom_navigationbar--div_left {
+				float: left;
+			}
+			div.bottom_navigationbar--div_left--div {
+				position: relative;
+				float: left;
+				margin: 0px;
+				padding: 0px 0px 0px 27px;
+			}
+			.bottom_navigationbar--div_left--div_item {
+				color: #737373; 
+				font-size: small;
+			}
+			div#bottom_navigationbar--div_right {
+				float: right;
+				margin: 0px 30px 0px 0px;
+			}
+			div.bottom_navigationbar--div_right--div {
+				position: relative;
+				float: right;
+				margin: 0px;
+				padding: 0px 0px 0px 27px;
+			}
+			.bottom_navigationbar--div_right--div_item {
+				color: #737373; 
+				font-size: small;
+			}
+
+
+
+			div#popupmenu {
+				width: 320px;
+				height: 496px;
+
+				position: absolute;
+				top: 50px;
+				right: 20px;
+
+				visibility: hidden;
+				overflow: auto;
+
+				background-color: white;
+				box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+			}
+			#popupmenu--div_main {
+				width: 320px;
+				height: 456px;
+				margin: 0;
+			}
+			#popupmenu--div_hidden {
+				display: none;
+				width: 320px;
+				height: 356px;
+			}
+			#popupmenu--div_more {
+				position: absolute;
+				bottom: 0;
+				width: 320px;
+				height: 40px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				vertical-align: middle;
+				background-color: rgb(245, 245, 245);
+			}
+			#popupmenu--div_hidden--div_line {
+				visibility: visible;
+				width: 264px;
+				height: 0;
+				margin: 0 28px 0 28px;
+				border-bottom: 1px solid rgb(235, 235, 235);
+			}
+			#popupmenu--div--p {
+				color: black;
+			}
+			#popupmenu--p--span {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+		</style>
+
+
+	</head>
+	<body onresize="div_buttom_resize()">
+
+		<div id="div_main">
+
+			<div id="top_navigationbar">
+				<span id="top_navigationbar--span">
+					<div class="top_navigationbar--div_img">
+						<div id="top_navigationbar--div_user_circle">
+							<p class="top_navigationbar--div_item--img_user" align="center">j</p>
+						</div>
+					</div>
+					<div class="top_navigationbar--div_img">
+						<img class="top_navigationbar--div_item--img_noti" src="image/icon_noti.png" onmouseover="notiButtonMouseOver()" onclick="notiButtonClick()">
+					</div>
+					<div class="top_navigationbar--div">
+						<img class="top_navigationbar--div_item--img_menu" src="image/icon_menu_litegray.png" onmouseover="menuButtonMouseOver(this)" onmouseleave="menuButtonMouseLeave(this)" onclick="menuButtonClick()">
+					</div>
+					<div class="top_navigationbar--div">
+						<a class="top_navigationbar--div_item">이미지</a>
+					</div>
+					<div class="top_navigationbar--div">
+						<p class="top_navigationbar--div_item" href="http://mail.google.com">Gmail</p>
+					</div>
+				</span>
+			</div>
+			<div id="main_contents">
+				<span id="main_contents--span">
+					<center>
+						<div class="main_contents--span--div" id="main_contents--span--div_logo">
+							<img src="image/google_logo.png" style="width: 100%; height: 100%;">
+							<p>한국</p>
+						</div>
+						<div class="main_contents--span--div">
+							<div id="main_contents--span--div_search" onfocus="main_contents_search_input(this)">
+								<div id="main_contents--span--div_search--div_input">
+									<input type="text" id="main_contents--span--div_search--div_input--input">
+								</div>
+								<div id="main_contents--span--div_search--div_searchbutton">
+									<img class="main_contents--span--div_search--div_searchbutton--img" src="image/icon_mic.png">
+									<img class="main_contents--span--div_search--div_searchbutton--img" src="image/icon_keyboard.png">
+								</div>
+							</div>
+						</div>
+						<div class="main_contents--span--div" id="main_contents--span--div_button">
+							<span>
+								<center>
+									<button class="main_contents--span--div_button--button" onmouseover="main_contents_bottom_button_focus(this)" >Google 검색</button>
+									<button class="main_contents--span--div_button--button" onmouseover="main_contents_bottom_button_focus(this)" >I'm Feeling Lucky</button>
+								</center>
+							</span>
+						</div>
+					</center>
+				</span>
+			</div>
+
+			<div id="popupmenu">
+
+				<div id="popupmenu--div_main">
+					<ul class="top_navigationbar--div_item--img_menu--ul" type="none">
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<div class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_account.png"></div>
+							<div class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >내 계정</p></div>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_search.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >검색</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_map.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >지도</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_youtube.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >YouTube</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_play.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >Play</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_news.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >뉴스</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_mail.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >Gmail</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_drive.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >드라이브</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_calendar.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >캘린더</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_googleplus.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >Google+</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_trans.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >번역</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_picture.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >사진</p></span>
+						</li>
+					</ul>
+				</div>
+
+				<div id="popupmenu--div_more" onclick="menuHiddenButtonClick(this)">
+
+					<p id="popupmenu--div--p">더보기</p>
+				</div>
+
+				<div id="popupmenu--div_hidden">
+					<div id="popupmenu--div_hidden--div_line"></div>
+					<ul id="hiddenPopupmenu" class="top_navigationbar--div_item--img_menu--ul" type="none">
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<div class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_doc.png"></div>
+							<div class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >문서</p></div>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_book.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >도서</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_blog.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >Blogger</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_addr.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >주소록</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_hang.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >행아웃</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_keep.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >Keep</p></span>
+						</li>
+						<li class="top_navigationbar--div_item--img_menu--li_item" onmouseover="menuItemButtonMouseOver(this)" onmouseleave="menuItemButtonMouseLeave(this)">
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_img"><img class="top_navigationbar--div_item--img_menu--li_item--img" src="image/icon_menu_class.png"></span>
+							<span class="top_navigationbar--div_item--img_menu--li_item--span_p"><p class="top_navigationbar--div_item--img_menu--li_item--p" >클래스룸</p></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="bottom_navigationbar">
+			<div class="bottom_navigationbar--div" id="bottom_navigationbar--div_left">
+				<div class="bottom_navigationbar--div_left--div">
+					<p class="bottom_navigationbar--div_left--div_item" align="center">광고</p>
+				</div>
+				<div class="bottom_navigationbar--div_left--div">
+					<p class="bottom_navigationbar--div_left--div_item" align="center">비즈니스</p>
+				</div>
+				<div class="bottom_navigationbar--div_left--div">
+					<p class="bottom_navigationbar--div_left--div_item" align="center">Google 정보</p>
+				</div>
+			</div>
+			<div class="bottom_navigationbar--div" id="bottom_navigationbar--div_right">
+				<div class="bottom_navigationbar--div_right--div">
+					<p class="bottom_navigationbar--div_right--div_item" align="center">Google.com 사용</p>
+				</div>
+				<div class="bottom_navigationbar--div_right--div">
+					<p class="bottom_navigationbar--div_right--div_item" align="center">설정</p>
+				</div>
+				<div class="bottom_navigationbar--div_right--div">
+					<p class="bottom_navigationbar--div_right--div_item" align="center">약관</p>
+				</div>
+				<div class="bottom_navigationbar--div_right--div">
+					<p class="bottom_navigationbar--div_right--div_item" align="center">개인정보처리방침</p>
+				</div>
+			</div>
+		</div>
+
+
+		<script>
+			function body_resize() {
+//			    console.log("body resize");
+//			    var height = window.outerHeight;
+//			    var x = document.getElementById("div_main");
+//
+//			    console.log("height" + height);
+//			    console.log(x.style.height);
+//			    x.style.height = height + "px";
+//                console.log(x.style.height);
+			}
+			function div_buttom_resize() {
+
+			    console.log("bottom resize");
+			    var x = document.getElementById("test");
+			    console.log(x);
+			    var width = x.style.width;
+			    if( width < 960 )
+				{
+				    var dis = 960 - width;
+				    x.style.right = dis + "px";
+				    console.log("width dis is " + dis);
+				}
+			}
+
+			function menuButtonMouseOver(x) {
+                x.src="image/icon_menu_gray.png";
+            }
+            function menuButtonMouseLeave(x) {
+				x.src="image/icon_menu_litegray.png";
+            }
+            var showPopupManu = false;
+            function menuButtonClick() {
+
+                var menu = document.getElementById("popupmenu");
+
+                console.log(showPopupManu);
+                console.log("show Popup Menu");
+
+                if( showPopupManu ) {
+                    menu.style.visibility="hidden";
+				}
+                else {
+                    menu.style.visibility="visible";
+				}
+
+                showPopupManu=!showPopupManu;
+            }
+            function menuItemButtonMouseOver(x) {
+                x.style.boxShadow="0 0 1px 1px rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08)";
+            }
+            function menuItemButtonMouseLeave(x) {
+				x.style.boxShadow="none";
+            }
+            function menuHiddenButtonClick(x) {
+				x.style.visibility="hidden";
+				var hidden = document.getElementById("popupmenu--div_hidden");
+				hidden.style.display="block";
+				showHiddenPopup=true;
+            }
+            function notiButtonMouseOver() {
+            }
+            function notiButtonClick() {
+            }
+
+
+			function main_contents_search_input(x) {
+				console.log("search input focus");
+				//x.style.box-shadow = "0 3px 8px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08)";
+				x.style.boxShadow="0 3px 8px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08)";
+			}
+			function main_contents_bottom_button_focus(x) {
+				console.log(x);
+				//x.style.outline-width = "0";
+				x.style.border = "2px";
+			}
+		</script>
+	</body>
+</html>
